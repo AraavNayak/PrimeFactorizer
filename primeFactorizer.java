@@ -34,6 +34,9 @@ public class primeFactorizer {
 
 
 	public static String pFactorize(int n) {
+		//Handle the edge case
+		if(n == 1) return "";
+		
 		int num = n;
 		String f = "";
 		int i = 2;
@@ -52,7 +55,72 @@ public class primeFactorizer {
 		
 		if(isPrime(n)) return f + "x1";
 		
+		f = useExponents(f);
+		
 		return f;
+	}
+	
+	public static String useExponents(String s) {
+		String s1 = s.split("x");
+		int length = s1.length;
+		int[] i1 = new int[length];
+		for(int i = 0; i < length; i++) {
+			i1[i] = Integer.parseInt(s1[i]);
+		}
+		
+		int[] freq = new int[length];
+		for(int i = 0; i < length; i++) {
+			freq[i] = 1;
+		}
+		
+		int i[] = new int[length];
+		
+		int freqInd = 0;
+		
+		for(int currInd = 0; currInd < length; currInd++) {
+			if(getInd(i1[currInd], i) == -1) {
+				i[currInd] = i1[currInd];
+				freqind = currInd;
+			} else {
+				freq[freqInd]++;
+				freq[currInd] = 0;
+			}
+		}
+		
+		//counting the frequency of zeroes
+		int zeroCount = 0;
+		for(int k = 0; k < freq.length; k++) {
+			if(freq[k] == 0) zeroCount++;
+		}
+		
+		String[] primes = new String[length-zeroCount];
+		int currInd = 0;
+		
+		//cleaning up freq[]
+		String[] freqs = new String[length-zeroCount];
+		int curInd = 0;
+		for(int k = 0; k < freq.length; k++) {
+			if(freq[k] != 0) {
+				freqs[curInd] = "" + freq[k];
+				curInd++;
+			}
+		}
+		
+		for(int j = 0; j < freq.length; j++) {
+			if(freq[j] != 0) {
+				primes[currInd] = "" + i[j];
+				currInd++;
+			}
+		}
+		
+		String primeFactorization = "";
+		
+		for(int k = 0; k < length-zeroCount; k++) {
+			primeFactorization += primes[k] + "^" + freqs[k] + " ";
+			if(k != length-zeroCount-1) primeFactorization += "x ";
+		}
+		
+		return primeFactorization;
 	}
 	
 	
