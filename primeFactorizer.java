@@ -1,6 +1,5 @@
-// Araav Nayak 
-// 07/23/22 8:00pm
 
+private static int[] factors;
 
 public static void getFactors(int n) {
 	System.out.print("Factors: ");
