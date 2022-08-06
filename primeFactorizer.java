@@ -61,7 +61,7 @@ public class primeFactorizer {
 	}
 	
 	public static String useExponents(String s) {
-		String s1 = s.split("x");
+		String[] s1 = s.split("x");
 		int length = s1.length;
 		int[] i1 = new int[length];
 		for(int i = 0; i < length; i++) {
