@@ -116,7 +116,8 @@ public class primeFactorizer {
 		String primeFactorization = "";
 		
 		for(int k = 0; k < length-zeroCount; k++) {
-			primeFactorization += primes[k] + "^" + freqs[k] + " ";
+			if(!freqs[k].equals("1")) primeFactorization += primes[k] + "^" + freqs[k] + " ";
+			else primeFactorization += primes[k] + " ";
 			if(k != length-zeroCount-1) primeFactorization += "x ";
 		}
 		
