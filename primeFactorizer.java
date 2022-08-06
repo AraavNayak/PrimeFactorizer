@@ -80,7 +80,7 @@ public class primeFactorizer {
 		for(int currInd = 0; currInd < length; currInd++) {
 			if(getInd(i1[currInd], i) == -1) {
 				i[currInd] = i1[currInd];
-				freqind = currInd;
+				freqInd = currInd;
 			} else {
 				freq[freqInd]++;
 				freq[currInd] = 0;
