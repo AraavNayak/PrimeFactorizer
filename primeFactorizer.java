@@ -1,13 +1,9 @@
 // Araav Nayak 
 // 07/23/22 8:00pm
-/*
-Araav Nayak
-08/04/2022
-*/
 
 import java.util.Scanner;
 
-public class Main {
+public class primeFactorizer {
 
 	private static Scanner s;
 	private static int[] factors;
