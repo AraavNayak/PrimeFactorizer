@@ -3,13 +3,13 @@
 This program outputs the prime factorization (with exponents) of a number given as input.
 
 <br>
-Sample inputs:
+Sample input:
 <pre>
 1536
 </pre>
 
 <br>
-Sample outputs:
+Sample output:
 <pre>
 Factors: 1,2,3,4,6,8,12,16,24,32,48,64,96,128,192,256,384,512,768,1536
 Factorization terminated;
